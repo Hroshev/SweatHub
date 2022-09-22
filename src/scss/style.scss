@@ -1,0 +1,105 @@
+@import "../scss/fonts.scss";
+@import "../scss/style/reset.scss";
+@import "../scss/style/media-requests.scss";
+
+$first-color: #fff;
+$second-color: #000;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "minecraft";
+  font-weight: 400;
+  line-height: 1.6;
+  color: $first-color;
+  background-color: #000;
+}
+
+[class*="__container"] {
+  width: 100%;
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title{
+  font-size: 42px;
+  margin-bottom: 40px;
+  @include tablet-min {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+.subtitle{
+  font-family: 'Rubik', sans-serif;
+  color: $first-color;
+}
+
+.button {
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  border-radius: 6px;
+  display: inline-block;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid #fff;
+  text-shadow: #fff 3px 0 10px;
+  filter: blur(0.5px);
+  background-color: transparent;
+  z-index: 10;
+  animation: flicker 1.5s infinite alternate;
+  h1{
+    font-size: 20px;
+    margin-left: 30px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    opacity: 0.85;
+    top: 50%;
+    left: 15px;
+    transform: translate(0, -50%);
+    background: url("@img/header/header__telegram.png") 50% 50%/cover no-repeat; 
+  }
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  54%,
+  57%,
+  100% {
+    text-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 19px #fff, 0 0 25px rgb(49, 79, 161), 0 0 43px rgb(49, 79, 161),
+      0 0 50px rgb(49, 79, 161), 0 0 60px rgb(49, 79, 161), 0 0 75px rgb(49, 79, 161);
+  }
+
+  19%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+@import "../scss/header.scss";
+@import "../scss/main-page/reviews.scss";
+@import "../scss/main-page/course.scss";
+@import "../scss/main-page/manual.scss";
+@import "../scss/footer.scss";
+@import "../scss/modules/burger.scss";
+@import "../scss/modules/swiper.scss";
+@import "../scss/modules/popup.scss"; 

@@ -1,0 +1,31 @@
+/* Course */
+.course {
+    padding: 25px 0px 80px 0px;
+    @include tablet-min {
+        padding: 20px 0px 40px 0px;
+    }
+    h2 {
+        text-align: center;
+    }
+    .course__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .course__box__content {
+            margin: 0 auto;
+            padding: 47px 52px;
+            text-align: left;
+            border-radius: 2px;
+            background: url("@img/background__subtitle.png") 50% 50%/cover no-repeat; 
+            @include tablet-min {
+                padding: 15px 20px;
+            }
+        }
+        h3 {
+            @include tablet-min {
+                font-size: 18px;
+            }
+        }
+    }
+}
+/* //Course */
